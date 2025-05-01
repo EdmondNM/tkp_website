@@ -1,0 +1,14 @@
+<svg class="multiply" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1175 490">
+
+    <linearGradient id="orange_1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#e47000;"></stop>
+        <stop offset="50%" style="stop-color:#bf165e;"></stop>
+        <stop offset="100%" style="stop-color:#7c0378;"></stop>
+    </linearGradient>
+
+    <clipPath id="myClip2">
+        <polygon points="0,18 1175,0 1152,490 22,460"></polygon>
+    </clipPath>
+<!--    <image href="https://cityu.edu.hk/sites/g/files/asqsls3821/files/styles/cityu_desaturate_for_background/public/2018-12/1.%EF%BC%98.jpg" width="1175" height="490" preserveAspectRatio="xMidYMid slice" clip-path="url(#myClip2)"></image>-->
+    <polygon points="0,18 1175,0 1152,490 22,460" style="fill:url(#orange_1);"></polygon>
+</svg>

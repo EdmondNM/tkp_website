@@ -1,0 +1,7 @@
+resources/
+public/
+.idea/
+.vscode/
+go.sum
+.hugo_build.lock
+hugo_stats.json

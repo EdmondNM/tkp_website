@@ -1,0 +1,32 @@
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="mx-auto max-w-2xl {{if not ($block.design.no_padding | default false) }}py-32 sm:py-48 lg:py-56{{end}}">
+
+        <div class="mx-auto max-w-2xl text-center font-display text-4xl font-medium tracking-tighter text-primary-900 dark:text-primary-300 sm:text-5xl mb-10">
+            <h2>{{ $block.content.title }}</h2>
+        </div>
+        
+        <div class="text-xl text-center my-5">
+            <p>{{ $block.content.text }}</p>
+        </div>
+        
+        <div class="flex justify-between items-center my-6 px-4">
+            <div>
+                <span>Email: <a href="mailto:tkp.genai@cityu.edu.hk" class="text-primary-700 hover:underline">tkp.genai@cityu.edu.hk</a></span>
+            </div>
+            <div class="flex flex-col items-center">
+                {{ $image_path := path.Join "media" "IG.png" }} <!-- Ensure this is the correct path to your icon -->
+                {{ $image := resources.GetMatch $image_path }}
+                {{ if $image }}
+                    {{ $image = $image.Process "Resize 50x png" }}
+                    <a href="https://www.instagram.com/cityuhk_tkp_genai" target="_blank">
+                        <img class="w-8 h-8 mb-1" src="{{ $image.RelPermalink }}" alt="Instagram Icon">
+                    </a>
+                {{ end }}
+                <span><a href="https://www.instagram.com/cityuhk_tkp_genai" target="_blank" class="text-primary-700 hover:underline">Follow us on Instagram</a></span>
+            </div>
+        </div>
+    </div>
+</div>

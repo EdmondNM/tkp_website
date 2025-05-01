@@ -1,0 +1,15 @@
+<div class="contact-section">
+    <h2>{{ .Params.title }}</h2>
+    <p>{{ .Params.text }}</p>
+    <ul>
+        {{ range .Params.items }}
+            <li>
+                <i class="{{ .icon }}"></i>  {# Use valid icon CSS classes #}
+                <span>{{ .name }}: {{ .description }}</span>
+                {{ if .action }}  {# Check if action exists before rendering #}
+                    <a href="{{ .action.url }}" class="button">{{ .action.text }}</a>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+</div>

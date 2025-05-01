@@ -1,0 +1,38 @@
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="mx-auto max-w-2xl {{if not ($block.design.no_padding | default false) }}py-32 sm:py-48 lg:py-56{{end}}">
+
+        <div class="mx-auto max-w-2xl text-center font-display text-4xl font-medium tracking-tighter text-primary-900 dark:text-primary-300 sm:text-5xl">
+            <h2>{{ $block.content.title }}</h2>
+        </div>
+        <div class="text-xl text-center my-5">
+            <p>{{ $block.content.text }}</p>
+        </div>
+        <div class="text-xl text-center my-5">
+            <table>
+            {{ range $block.content.items }}
+                <tr>
+                    <th>{{ .date }}</th>
+                    <th>{{ .description }}</th>
+                </tr>
+            {{ end }}
+            </table>
+        </div>
+        <div style="margin: 80px;"></div>
+        <div class="text-xl text-center my-5">
+            <p>{{ $block.content.third_cohort_text }}</p>
+        </div>
+        <div class="text-xl text-center my-5">
+            <table>
+            {{ range $block.content.third_cohort_items  }}
+                <tr>
+                    <th>{{ .date }}</th>
+                    <th>{{ .description }}</th>
+                </tr>
+            {{ end }}
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+<div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="mx-auto max-w-2xl {{if not ($block.design.no_padding | default false)}}py-32 sm:py-48 lg:py-56{{end}}">
+
+        <div class="mx-auto max-w-2xl text-center font-display text-4xl font-medium tracking-tighter text-primary-900 dark:text-primary-300 sm:text-5xl mb-10">
+            <h2>{{ $block.content.title }}</h2>
+        </div>
+        
+        <div class="text-xl text-center my-5">
+            <p>{{ $block.content.text }}</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center my-6">
+            <div class="m-4">
+                <a href="{{ .link }}" target="_blank">
+                    {{ $image_path := path.Join "media" "tinkapinglogo400b.png" }} <!-- Ensure this is the correct path to each logo -->
+                    {{ $image := resources.GetMatch $image_path }}
+                    {{ if $image }}
+                        {{ $image = $image.Process "Resize 450x80 png" }} <!-- Adjust dimensions as necessary -->
+                        <img class="h-24" src="{{ $image.RelPermalink }}" alt="{{ .logo }} Logo"> <!-- Change alt text as needed -->
+                    {{ end }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
